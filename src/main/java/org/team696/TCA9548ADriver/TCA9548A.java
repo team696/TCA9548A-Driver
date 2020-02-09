@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.I2C.Port;
 
 public class TCA9548A {
-    private byte selectedChannel;
+    private byte selectedChannel=(byte)255;
     private Port port;
     private I2C muxi2c;
 
