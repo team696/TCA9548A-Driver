@@ -15,7 +15,7 @@ public class TCA9548A {
         this.port = port;
         //this.muxAddress = address;
         this.muxi2c = new I2C(port, address);
-        setChannel(1);
+        setChannel(0);
     }
 
     public Port getPort(){
@@ -26,7 +26,7 @@ public class TCA9548A {
         if(selectedChannel == channel){
             return;
         }
-        byte[] data = {(byte)channel};
+        byte[] data = {(byte)(1 << channel)};
         muxi2c.writeBulk(data, 1);
         selectedChannel = channel;
     }
